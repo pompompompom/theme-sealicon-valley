@@ -1,3 +1,5 @@
+{% include base.html %}
+
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 <head>
@@ -16,10 +18,10 @@
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
         <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          <a class="post-link" href="{{base}}{{ post.url }}">{{ post.title | escape }}</a>
         </h2>
           <div class="excerpt_container">
-            {{ post.excerpt | remove: '<p>' | remove: '</p>' }}
+            {{ post.excerpt | remove: '<p>' | remove: '</p>' | replace: 'BASE', base }}
 
         </div>
       </div>
