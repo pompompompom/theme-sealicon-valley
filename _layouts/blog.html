@@ -12,10 +12,10 @@
 
     <div id="home_content">
 
-        <div class="masonry">
+        <div class="masonry" id="blog_masonry">
             <ul class="post-list">
                 {% for post in site.posts %}
-                {% if post.tags contains 'comics' %}
+                {% if post.tags contains 'blog' %}
                 <li>
                     <div class="item">
                             <div class="post_info" >
