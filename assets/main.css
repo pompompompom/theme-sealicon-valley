@@ -114,14 +114,14 @@ body {
 	margin-right: 5px;
 }
 #home_content {
-	width: 100%;
+	max-width: 1400px;
 	margin: 0 auto;
 }
 .masonry {
     padding: 0;
-    -moz-column-gap: 1.5em;
-    -webkit-column-gap: 1.5em;
-    column-gap: 1.5em;
+    -moz-column-gap: 20px;
+    -webkit-column-gap: 20px;
+    column-gap: 20px;
     font-size: .85em;
 		margin: 40px;
 
@@ -137,7 +137,7 @@ body {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-shadow: 2px 2px 2px 2px #ccc;
-		animation: item_animation 10s ease-in-out infinite;
+		/* animation: item_animation 10s ease-in-out infinite; */
 }
 
 @keyframes item_animation {
@@ -275,4 +275,15 @@ body {
   75% {
     transform: translateX(300px) rotate(45deg);
   }
+}
+.post_container {
+	width: 800px;
+	text-align:center;
+	margin: 20px auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	display: block;
+}
+.post_container img {
+	width: 30px;
 }
