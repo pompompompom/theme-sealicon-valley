@@ -113,7 +113,7 @@ body {
 	margin-left: 5px;
 	margin-right: 5px;
 }
-#home_content {
+.home_content {
 	max-width: 1400px;
 	margin: 0 auto;
 }
@@ -286,4 +286,80 @@ body {
 }
 .post_container img {
 	width: 30px;
+}
+#characters {
+		padding: 70px 0;
+		font: 15px/20px Arial, sans-serif;
+		display: block;
+		max-width: 1400px;
+		border-style: solid;
+    border-width: 1px;
+		margin-top: 50px;
+}
+
+.ccontainer {
+	margin: 0 auto;
+	width: 250px;
+	height: 200px;
+	position: relative;
+	perspective: 1000px;
+	margin-top: 200px;
+}
+
+.carousel {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	transform-style: preserve-3d;
+	transition: transform 0.8s;
+}
+
+.citem {
+	display: block;
+	position: absolute;
+	background: transparent;
+	width: 202px;
+	height: 235px;
+	line-height: 200px;
+	font-size: 5em;
+	text-align: center;
+	color: #FFF;
+	opacity: 0.95;
+	border-radius: 10px;
+}
+
+.a {
+	transform: rotateY(0deg) translateZ(250px);
+	background-image:url("octopus.png");
+	background-size: cover;
+}
+.b {
+	transform: rotateY(72deg) translateZ(250px);
+	background-image:url("dolphin.png");
+	background-size: cover;
+}
+.c {
+	transform: rotateY(144deg) translateZ(250px);
+	background-image:url("narwhal.png");
+	background-size: cover;
+}
+.d {
+	transform: rotateY(216deg) translateZ(250px);
+	background-image:url("octopus.png");
+	background-size: cover;
+}
+.e {
+	transform: rotateY(288deg) translateZ(250px);
+	background-image:url("dolphin.png");
+	background-size: cover;
+}
+
+.next, .prev {
+	color:black;
+}
+
+.next {
+	float:right;
+}
+.prev {
 }
