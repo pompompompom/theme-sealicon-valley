@@ -4,15 +4,78 @@
 <html lang="{{ page.lang | default: site.lang | default: " en " }}">
 
 <head>
-    {% include head.html %}
+{% include head.html %}
+<script src="{{base}}/assets/jquery.min.js"></script>
+<script src="{{base}}/assets/scrolltest.js"></script>
+<style>
+.header_box {
+  position:relative;
+  height:970px;
+  background-image: url("{{base}}/assets/landscape-1.png");
+	background-repeat:no-repeat;
+	width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+  display: block;
+  overflow: hidden;
+  background-attachment: fixed;
+}
+.logo {
+  width:100%;
+  height: 100px;
+  position:absolute;
+  top: 25%;
+}
+.layer2 {
+  width: 100%;
+  height:970px;
+  background-image: url("{{base}}/assets/landscape-2.png");
+	background-size: cover;
+	background-repeat:no-repeat;
+  position:absolute;
+  top:0%;
+}
+.layer3 {
+  width: 100%;
+  height:970px;
+  background-image: url("{{base}}/assets/landscape-3.png");
+	background-size: cover;
+	background-repeat:no-repeat;
+  position:absolute;
+  top:0%;
+}
+.layer4 {
+  width: 100%;
+  height:970px;
+  background-image: url("{{base}}/assets/landscape-4.png");
+	background-size: cover;
+	background-repeat:no-repeat;
+  position:absolute;
+  top:0%;
+}
+.layer5 {
+  width: 100%;
+  height:970px;
+  background-image: url("{{base}}/assets/landscape-5.png");
+	background-size: cover;
+	background-repeat:no-repeat;
+  position:absolute;
+  z-index: 1000;
+}
+.smallheader {
+  width: 100%;
+  height:200px;
+//  background: pink;
+}
+</style>
 </head>
-
 <body>
-    {% include header.html %}
 
-    <div id="home_content">
+  {% include headerv2.html %}
 
-        <div class="masonry" id="blog_masonry">
+    <div class="home_content" >
+
+        <div class="masonry">
             <ul class="post-list">
                 {% for post in site.posts %}
                 {% if post.tags contains 'blog' %}
@@ -24,6 +87,9 @@
                                 <span class="home_post_date" >{{ post.date | date: "%b %-d, %Y" }}</span>
 
                             </div>
+                            <p>
+                              {{post.url}}
+                            </p>
                         <a class="post-link" href="{{base}}{{ post.url }}">
                             <div class="excerpt_container">
                                 {{ post.excerpt | remove: '
@@ -40,6 +106,4 @@
     </div>
     {% include footer.html %}
 </body>
-
-
 </html>
