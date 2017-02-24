@@ -1,19 +1,137 @@
 {% include base.html %}
 
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ page.lang | default: site.lang | default: " en " }}">
+
 <head>
     {% include head.html %}
 </head>
+
 <body>
 
-   {% include header.html %}
+    {% include header.html %}
 
-   <div class="post_container">
+    <div class="post_container">
+        <div class="post_info">
+            <span class="post_title">
+              {{ page.title }}
+            </span>
+            <span class="post_date">
+              {{ page.date | date: "%B %-d, %Y"}}
+            </span>
 
-{{ content | replace: 'BASE', base }}
-</div>
-{% include footer.html %}
+        </div>
+        {% if page.tags contains 'comics' %}
+
+        <div class="comic">
+            {{ page.comic | remove: '
+            <p>' | remove: '</p>' | replace: 'BASE', base }}
+        </div>
+        {% endif %} {{ content | replace: 'BASE', base }}
+
+        <div class="share">
+            <div class="share_this">
+                Share this:
+            </div>
+
+
+            <div class="post_share_social_container">
+                <a href="https://www.instagram.com/sealiconvalley/">
+                    <div class="social_img">
+                    </div>
+                </a>
+                <a href="https://www.facebook.com/sealiconvalley/">
+                    <div class="social_img">
+                    </div>
+                </a>
+                <div class="social_img">
+                </div>
+                <div class="social_img">
+                </div>
+                <div class="social_img">
+                </div>
+            </div>
+
+            <div class="prev_next_container">
+                {% if page.previous.url %}
+
+                <a href='{{base}}{{page.previous.url}}'>
+
+                    <div class="prev_post">
+                        previous
+                    </div>
+                </a>
+                {% endif %} {% if page.next.url %}
+                <a href='{{base}}{{page.next.url}}'>
+                    <div class="next_post">
+                        next
+                    </div>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+
+        {% if page.related %}
+        {% assign maxRelated = 3 %}
+        {% assign maxRelatedCounter = 0 %}
+
+        <div class="related_posts">
+            <div class="related_posts_prompt">
+                you might also like
+            </div>
+
+
+
+
+                <div class="masonry">
+                    <ul class="post-list">
+                        {% for post in site.posts %}
+                        {% if page.related contains post.title %}
+                        <li>
+                            <div class="item">
+                                <a class="post-link" href="{{base}}{{ post.url }}">
+                                    <div class="related_post_excerpt_container">
+                                        {{ post.preview | remove: '
+                                        <p>' | remove: '</p>' | replace: 'BASE', base }}
+
+                                    </div>
+                                    <div class="related_post_title">
+                                      {{ post.title }}
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
+                              {% if maxRelatedCounter >= maxRelated %}
+                                {% break %}
+                              {% endif %}
+
+                        {%  endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+
+
+            <div class="related_posts_container">
+
+                    {% for post in site.posts %} {% if page.related contains post.title %}
+
+                    <!--<li><a href="{{ post.url }}">{{ post.title }}</a></li>-->
+
+                    <div class="related_post_preview">
+
+                    </div>
+                    {% endif %} {% endfor %}
+
+            </div>
+
+        </div>
+
+
+        {% endif %}
+
+    </div>
+    {% include footer.html %}
 </body>
 
 

@@ -1,8 +1,23 @@
 var homeBig = false;
+var base = ''
 $(document).ready(function() {
 
     var url = document.URL;
     console.log(url);
+    var depth = url.split('/').length - 1;
+    if (depth <= 1) {
+        base = '.';
+    } else if (depth == 2) {
+        base = '..';
+    } else if (depth == 3) {
+        base = '../..';
+    } else if (depth == 4) {
+        base = '../../..';
+    } else if (depth == 5) {
+        base = '../../../..';
+    } else if (depth == 6) {
+        base = '../../../../..';
+    }
     var width = $(document).width();;
     console.log(width);
     var scrollWidthLimit = 841;
@@ -23,18 +38,18 @@ $(document).ready(function() {
         });
         homeBig = true;
     } else {
+
+        if (width < scrollWidthLimit) {
+            console.log("url(" + base + "/assets/banner_mobile.png\")");
+            $(".header_box_small").style.backgroundImage = "url(" + base + "/assets/banner_mobile.png\")";
+        }
+
         $(".header_box").css({
             "display": "none"
         });
         $(".header_box_small").css({
             "display": "block"
         });
-
-        if (width < scrollWidthLimit) {
-            $(".header_box_small").css({
-                "background-image": "url(\"assets/banner-mobile.png\")"
-            });
-        }
 
         homeBig = false;
     }
