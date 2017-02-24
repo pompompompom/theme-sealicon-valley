@@ -20,7 +20,7 @@
                     <div class="item">
                         <a class="post-link" href="{{base}}{{ post.url }}">
                             <div class="excerpt_container">
-                                {{ post.excerpt | remove: '
+                                {{ post.preview | remove: '
                                 <p>' | remove: '</p>' | replace: 'BASE', base }}
 
                             </div>
