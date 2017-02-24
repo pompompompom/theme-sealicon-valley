@@ -12,12 +12,28 @@
 
     <div class="home_content" >
 
-        <div class="masonry">
+        <div class="masonry" id="blog_masonry">
             <ul class="post-list">
                 {% for post in site.posts %}
                 {% if post.tags contains 'blog' %}
                 <li>
-                    <div class="item">
+                  <a href="{{base}}{{ post.url }}">
+                    <div class="item" id="blog_item">
+                      <div class="blog_preview">
+                        {{ post.preview | remove: '
+                        <p>' | remove: '</p>' | replace: 'BASE', base }}
+                      </div>
+                      <div class="blog_preview_info">
+                        <div class="blog_preview_title">
+                          {{ post.title | escape }}
+                        </div>
+                        <div class="blog_preview_excerpt">
+                          {{ post.excerpt | remove: '
+                          <p>' | remove: '</p>' | replace: 'BASE', base }}
+                        </div>
+                      </div>
+
+                      <!--
                             <div class="post_info" >
 
                                 <span class="home_post_title">{{ post.title | escape }}</span>
@@ -34,7 +50,9 @@
 
                             </div>
                         </a>
+                      -->
                     </div>
+                  </a>
                 </li>
                 {%  endif %}
                 {% endfor %}
