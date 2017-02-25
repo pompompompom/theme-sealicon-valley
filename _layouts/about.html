@@ -4,43 +4,32 @@
 <html lang="{{ page.lang | default: site.lang | default: " en " }}">
 
 <head>
-{% include head.html %}
+    {% include head.html %}
 </head>
+
 <body>
 
-  {% include header.html %}
-
-    <div class="home_content" >
-
-        <div class="masonry">
-            <ul class="post-list">
-                {% for post in site.posts %}
-                {% if post.tags contains 'blog' %}
-                <li>
-                    <div class="item">
-                            <div class="post_info" >
-
-                                <span class="home_post_title">{{ post.title | escape }}</span>
-                                <span class="home_post_date" >{{ post.date | date: "%b %-d, %Y" }}</span>
-
-                            </div>
-                            <p>
-                              {{post.url}}
-                            </p>
-                        <a class="post-link" href="{{base}}{{ post.url }}">
-                            <div class="excerpt_container">
-                                {{ post.preview | remove: '
-                                <p>' | remove: '</p>' | replace: 'BASE', base }}
-
-                            </div>
-                        </a>
-                    </div>
-                </li>
-                {%  endif %}
-                {% endfor %}
-            </ul>
+    {% include header.html %}
+    <div class="about_container">
+        <div class="about_pic">
         </div>
+
+        <div class="about_text">
+            <div class="about_title">
+                Hi there!
+            </div>
+            <div class="about_content">
+                Lorem ipsum dolor sit amet, oporteat invenire ut quo. Sed simul tation explicari ne. Viderer disputationi ad cum. Intellegebat signiferumque quo ei. Mel ignota salutandi ut, cu nec atqui nulla.
+                <br/> <br/>Cibo simul mucius his an. Ius civibus inimicus te, democritum suscipiantur delicatissimi qui ex, nam id sale commune lobortis. Postulant vituperata ea cum, iracundia comprehensam te est. Melius aperiri incorrupte vel no. Detraxit
+                quaestio delicatissimi no pri.
+            </div>
+            <div class="about_email">
+                sealiconvalley@gmail.com
+            </div>
+        </div>
+
     </div>
     {% include footer.html %}
 </body>
+
 </html>
