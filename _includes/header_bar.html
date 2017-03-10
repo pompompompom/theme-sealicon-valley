@@ -5,82 +5,17 @@
 
 <head>
     {% include head.html %}
-    <script>
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-    }
-
-    /* Set the width of the side navigation to 0 */
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-    }
-    </script>
-
-    <style>
-    /* The side navigation menu */
-    .sidenav {
-        height: 100%; /* 100% Full-height */
-        width: 0; /* 0 width - change this with JavaScript */
-        position: fixed; /* Stay in place */
-        z-index: 10000; /* Stay on top */
-        top: 0;
-        right: 0;
-        background-color: #111; /* Black*/
-        overflow-x: hidden; /* Disable horizontal scroll */
-        padding-top: 60px; /* Place content 60px from the top */
-        transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-
-        background-color: white;
-    }
-
-    /* The navigation menu links */
-    .sidenav a {
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 25px;
-        color: #818181;
-        display: block;
-        transition: 0.3s
-    }
-
-    /* When you mouse over the navigation links, change their color */
-    .sidenav a:hover, .offcanvas a:focus{
-        color: #f1f1f1;
-    }
-
-    /* Position and style the close button (top right corner) */
-    .sidenav .closebtn {
-        position: absolute;
-        top: 0;
-        right: 25px;
-        font-size: 36px;
-        margin-left: 50px;
-    }
-
-    </style>
 </head>
 
 <body>
 
-  <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="{{base}}">Comic
-    </a>
-    <a href="{{base}}/blog.html">Blog
-    </a>
-    <a href="{{base}}/characters.html">Characters
-    </a>
-    <a href="{{base}}/about.html">About
-    </a>
-  </div>
-
     <div class="header_bar_container">
         <div class="header_bar">
             <div class="logo_header_bar">
-              <a href="{{base}}">
-                <div class="header_logo">
-                </div>
-              </a>
+                <a href="{{base}}">
+                    <div class="header_logo">
+                    </div>
+                </a>
             </div>
             <div id="social_container_small">
                 <a href="https://www.instagram.com/sealiconvalley/">
@@ -101,27 +36,40 @@
             <div class="menu_header_bar">
                 <a href="{{base}}">
                     <div class="menu_header_text_wrapper">
+                        {% if page.url contains 'blog.html' or page.url contains 'characters.html' or page.url contains 'about.html' %}
                         <div class="menu_header_text">Comic</div>
+                        {% else %}
+                        <div class="menu_header_text_current">Comic</div>
+                        {% endif %}
                     </div>
                 </a>
                 <a href="{{base}}/blog.html">
                     <div class="menu_header_text_wrapper">
+                        {% if page.url contains 'blog.html' %}
+                        <div class="menu_header_text_current">Blog</div>
+                        {% else %}
                         <div class="menu_header_text">Blog</div>
+                        {% endif %}
                     </div>
                 </a>
                 <a href="{{base}}/characters.html">
                     <div class="menu_header_text_wrapper">
+                        {% if page.url contains 'characters.html' %}
+                        <div class="menu_header_text_current">Characters</div>
+                        {% else %}
                         <div class="menu_header_text">Characters</div>
+                        {% endif %}
                     </div>
                 </a>
                 <a href="{{base}}/about.html">
                     <div class="menu_header_text_wrapper">
+                        {% if page.url contains 'about.html' %}
+                        <div class="menu_header_text_current">About</div>
+                        {% else %}
                         <div class="menu_header_text">About</div>
+                        {% endif %}
                     </div>
                 </a>
-                <!--
-                <span class="burger" onclick="openNav()"></span>
-              -->
             </div>
         </div>
     </div>

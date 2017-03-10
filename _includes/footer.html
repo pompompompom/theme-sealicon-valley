@@ -33,28 +33,44 @@
 
             <div class="bottom_tab_img">
             </div>
-            <div class="menu_header_text">Comic</div>
+                {% if page.url contains 'blog.html' or page.url contains 'characters.html' or page.url contains 'about.html' %}
+                <div class="menu_header_text">Comic</div>
+                {% else %}
+                <div class="menu_header_text_current">Comic</div>
+                {% endif %}
         </div>
     </a>
     <a href="{{base}}/blog.html">
         <div class="bottom_tab_wrapper">
             <div class="bottom_tab_img">
             </div>
-            <div class="menu_header_text">Blog</div>
+                {% if page.url contains 'blog.html' %}
+                <div class="menu_header_text_current">Blog</div>
+                {% else %}
+                <div class="menu_header_text">Blog</div>
+                {% endif %}
         </div>
     </a>
     <a href="{{base}}/characters.html">
         <div class="bottom_tab_wrapper">
             <div class="bottom_tab_img">
             </div>
-            <div class="menu_header_text">Characters</div>
+                {% if page.url contains 'characters.html' %}
+                <div class="menu_header_text_current">Characters</div>
+                {% else %}
+                <div class="menu_header_text">Characters</div>
+                {% endif %}
         </div>
     </a>
     <a href="{{base}}/about.html">
         <div class="bottom_tab_wrapper">
             <div class="bottom_tab_img">
             </div>
-            <div class="menu_header_text">About</div>
+                {% if page.url contains 'about.html' %}
+                <div class="menu_header_text_current">About</div>
+                {% else %}
+                <div class="menu_header_text">About</div>
+                {% endif %}
         </div>
     </a>
 </div>
