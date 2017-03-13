@@ -10,6 +10,14 @@
 
 <body>
 
+{% if page.url contains 'blog.html' or page.url contains 'characters.html' or page.url contains 'about.html' %}
+
+
+    <div class="header_box_small">
+        {% include header_bar.html %}
+    </div>
+
+{% else %}
     <div class="header_box">
         {% include header_bar.html %}
         <a href="{{base}}">
@@ -46,11 +54,10 @@
         </div>
 
     </div>
-
-
-    <div class="header_box_small">
+    <div class="header_box_small" id="header_box_small_home">
         {% include header_bar.html %}
     </div>
+{% endif %}
 
 </body>
 

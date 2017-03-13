@@ -11,13 +11,14 @@
 
     <div class="header_bar_container">
         <div class="header_bar">
+          {% if page.url contains 'blog.html' or page.url contains 'characters.html' or page.url contains 'about.html' %}
             <div class="logo_header_bar">
                 <a href="{{base}}">
                     <div class="header_logo">
                     </div>
                 </a>
             </div>
-            <div id="social_container_small">
+            <div class="social_container_small">
                 <a href="https://www.instagram.com/sealiconvalley/">
                     <div class="social_img_small">
                     </div>
@@ -33,6 +34,30 @@
                 <div class="social_img_small">
                 </div>
             </div>
+            {% else %}
+            <div class="logo_header_bar home_logo_header_bar">
+                <a href="{{base}}">
+                    <div class="header_logo">
+                    </div>
+                </a>
+            </div>
+            <div class="social_container_small home_social_container_small">
+                <a href="https://www.instagram.com/sealiconvalley/">
+                    <div class="social_img_small">
+                    </div>
+                </a>
+                <a href="https://www.facebook.com/sealiconvalley/">
+                    <div class="social_img_small">
+                    </div>
+                </a>
+                <div class="social_img_small">
+                </div>
+                <div class="social_img_small">
+                </div>
+                <div class="social_img_small">
+                </div>
+            </div>
+            {% endif %}
             <div class="menu_header_bar">
                 <a href="{{base}}">
                     <div class="menu_header_text_wrapper">
