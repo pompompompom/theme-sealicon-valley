@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Shark the Investor"
-date:   2017-03-13 00:00:02 -0800
+date:   2017-03-14 00:00:02 -0800
 preview: "<img src=\"BASE/assets/splash_shark.png\" >"
 comic: "<img src=\"BASE/assets/comic_shark.png\" >"
 categories: comic
