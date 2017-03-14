@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Hello World"
-date:   2017-03-14 03:14:15 -0800
+date:   2017-03-14 00:00:06 -0800
 preview: "<img src=\"BASE/assets/comic_helloworld_splash.png\" >"
 comic: "<img src=\"BASE/assets/comic_helloworld.png\" >"
 categories: comic
