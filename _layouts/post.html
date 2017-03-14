@@ -6,11 +6,10 @@
 <head>
     {% include head.html %}
 
-    <meta property="og:url" content="{{ base }}{{ page.url }}" />
+    <meta property="og:url" content="www.sealiconvalley.com{{ page.url }}" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ page.title }}" />
-    <meta property="og:description" content="rawr awr wraw r" />
-    <meta property="og:image" content='{{ page.comic }}' />
+    <meta property="og:image" content='{{ page.preview }}' />
 
     <script>
         var winWidth = 520;
@@ -25,11 +24,17 @@
             switch (index) {
                 case 1:
                     console.log("1111");
-                    window.open('http://www.facebook.com/sharer.php?s=100&p[title]=' + '{{ page.title }}' + '&p[summary]=' + 'rawr  raw ra r' + '&p[url]=' + url + '&p[images][0]=' + '{{ page.comic }}', 'sharer', 'top=' +
+                    window.open('http://www.facebook.com/sharer.php?s=100&p[title]=' + '{{ page.title }}' + '&p[url]=' + url + '&p[images][0]=' + '{{ page.preview }}', 'sharer', 'top=' +
                         winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
                     break;
                 case 2:
                     window.open('https://twitter.com/intent/tweet?text='+'{{ page.title }} '+ url + '&hashtags=sealiconvalley');
+                    break;
+                case 3:
+                    window.open('https://www.snapchat.com/add/sealiconvalley');
+                    break;
+                case 4:
+                    window.open('http://sealiconvalley.tumblr.com/');
                     break;
             }
         }
@@ -89,10 +94,14 @@
                 <div class="social_img twitter_grey">
                 </div>
               </a>
+              <a href="javascript:void(0)" onclick="sharePost(3)">
                 <div class="social_img snap_grey">
                 </div>
+              </a>
+              <a href="javascript:void(0)" onclick="sharePost(4)">
                 <div class="social_img tumblr_grey">
                 </div>
+              </a>
             </div>
 
             <div class="prev_next_container">
