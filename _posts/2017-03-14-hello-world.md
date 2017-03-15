@@ -6,10 +6,10 @@ preview: "<img src=\"BASE/assets/comic_helloworld.png\" >"
 comic: "<img src=\"BASE/assets/comic_helloworld.png\" >"
 categories: comic
 related: [
-"Temp post 2",
-"Post 0202",
-"Post 020202",
-"Post Rawrrr",
+"Octopus the Designer",
+"Dolphin the Engineer",
+"Narwhal the Startup Founder",
+"Shark the Investor",
 ]
 tags:
 - comics
