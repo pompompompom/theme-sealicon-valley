@@ -38,6 +38,17 @@
                     break;
             }
         }
+
+        $( document ).ready(function() {
+          var children = $("#related_post_list").children().length;
+          console.log("children: " + children);
+
+          if(children == 0) {
+            $(".related_posts").css({
+                "display": "none"
+            });
+          }
+});
     </script>
 </head>
 
@@ -141,9 +152,9 @@
 
 
 
-            <div class="masonry">
-                <ul class="post-list">
-                    {% for post in site.posts %} {% if page.related contains post.title %}
+            <div class="masonry" id="related_posts_masonry">
+                <ul class="post-list" id="related_post_list">
+                    {% for post in site.posts %} {% if page.related contains post.title and page.categories == post.categories %}
                     <li>
                         <div class="item">
                             <a class="post-link" href="{{base}}{{ post.url }}">

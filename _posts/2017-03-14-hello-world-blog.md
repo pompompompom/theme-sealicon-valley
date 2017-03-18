@@ -3,7 +3,7 @@ layout: post
 title:  "Hello World"
 date:   2017-03-14 01:17:15 -0800
 preview: "<img src=\"BASE/assets/blog_hello_world.png\" >"
-categories: comic
+categories: blog
 related: [
 "Octopus the Designer",
 "Dolphin the Engineer",
