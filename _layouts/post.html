@@ -53,16 +53,6 @@
 </head>
 
 <body>
-    <!--
-  <div id="fb-root"></div>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
--->
     {% include header.html %}
 
     <div class="post_container">
@@ -134,14 +124,6 @@
             </div>
         </div>
 
-        <!-- Your share button code -->
-        <!--
-          <div class="fb-share-button"
-            data-href="http://www.sealiconvalley.com/test/comic/2017/02/04/test-post.html"
-            data-layout="button_count">
-          </div>
-        -->
-
         {% if page.related %} {% assign maxRelated = 3 %} {% assign maxRelatedCounter = 0 %}
 
         <div class="related_posts">
@@ -178,7 +160,7 @@
 
                 {% for post in site.posts %} {% if page.related contains post.title %}
 
-                <!--<li><a href="{{ post.url }}">{{ post.title }}</a></li>-->
+
 
                 <div class="related_post_preview">
 
@@ -191,17 +173,6 @@
 
 
         {% endif %}
-        <!--
-        <div id="mobile_sub_container">
-        <form action="https://getsimpleform.com/messages?form_api_token=d9fbe3b05597de14b1e5cc7db2ceea84" method="post" id="mobile_subscribe_form">
-          <div class="subscribe_container mobile_subscribe">
-            <input type='hidden' name='redirect_to' value='http://www.sealiconvalley.com/thankyou.html' />
-              <input type="text" name="email" class="subscribe_email" id="input_email" placeholder="Email Address"/>
-            <input class="subscribe_button" type='submit' value='Subscribe' />
-          </div>
-          </form>
-        </div>
-      -->
 
     </div>
     {% include footer.html %}
