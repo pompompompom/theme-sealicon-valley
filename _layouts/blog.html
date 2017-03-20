@@ -20,8 +20,8 @@
                   <a href="{{base}}{{ post.url }}">
                     <div class="item" id="blog_item">
                       <div class="blog_preview">
-                        {{ post.preview | remove: '
-                        <p>' | remove: '</p>' | replace: 'BASE', base }}
+                        <img src="{{ post.preview | remove: '
+                        <p>' | remove: '</p>' | replace: 'BASE', base }}" />
                       </div>
                       <div class="blog_preview_info">
                         <div class="blog_preview_title">

@@ -19,8 +19,8 @@
                     <div class="item">
                         <a class="post-link" href="{{base}}{{ post.url }}">
                             <div class="excerpt_container">
-                                {{ post.preview | remove: '
-                                <p>' | remove: '</p>' | replace: 'BASE', base }}
+                              <img src="{{ post.comic | remove: '
+                              <p>' | remove: '</p>' | replace: 'BASE', base }}" />
 
                             </div>
                         </a>

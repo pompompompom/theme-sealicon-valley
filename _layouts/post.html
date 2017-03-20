@@ -54,13 +54,14 @@
 
 <body>
     {% include header.html %}
+    <span itemscope itemtype="http://schema.org/Article">
 
     <div class="post_container">
         <div class="post_info">
-            <span class="post_title">
+            <span itemprop="name" class="post_title">
               {{ page.title }}
             </span>
-            <span class="post_date">
+            <span itemprop="datePublished" class="post_date">
               {{ page.date | date: "%B %-d, %Y"}}
             </span>
 
@@ -68,10 +69,12 @@
         {% if page.tags contains 'comics' %}
 
         <div class="comic">
-            {{ page.comic | remove: '
-            <p>' | remove: '</p>' | replace: 'BASE', base }}
+          <img itemprop="image"  src="{{ page.comic | remove: '
+          <p>' | remove: '</p>' | replace: 'BASE', base }}" />
         </div>
-        {% endif %} {{ content | replace: 'BASE', base }}
+        {% endif %}
+
+        {{ content | replace: 'BASE', base }}
 
         <div class="share">
             <div class="share_this">
@@ -141,8 +144,9 @@
                         <div class="item">
                             <a class="post-link" href="{{base}}{{ post.url }}">
                                 <div class="related_post_excerpt_container">
-                                    {{ post.preview | remove: '
-                                    <p>' | remove: '</p>' | replace: 'BASE', base }}
+
+                                    <img itemprop="image"  src="{{ post.preview | remove: '
+                                    <p>' | remove: '</p>' | replace: 'BASE', base }}" />
 
                                 </div>
                                 <div class="related_post_title">
@@ -175,6 +179,7 @@
         {% endif %}
 
     </div>
+  </span>
     {% include footer.html %}
 </body>
 
