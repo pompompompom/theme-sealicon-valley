@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "theme-sealicon-valley"
-  spec.version       = "0.1.9"
+  spec.version       = "0.2.0"
   spec.authors       = ["Mita Yun"]
   spec.email         = ["mitayun@gmail.com"]
 
