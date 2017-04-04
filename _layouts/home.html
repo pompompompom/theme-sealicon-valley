@@ -11,10 +11,28 @@
     {% include header.html %}
 
     <div class="home_content">
-        <div class="masonry">
+      <div class="masonry_one" style="margin-bottom:0px;">
+          <ul class="post-list">
+              <li>
+                  <div class="item">
+                      <a class="post-link" href="{{base}}{{ site.posts[0].url }}">
+                          <div class="excerpt_container">
+                            <img src="{{ site.posts[0].comic | remove: '
+                            <p>' | remove: '</p>' | replace: 'BASE', base }}" />
+
+                          </div>
+                      </a>
+                  </div>
+              </li>
+          </ul>
+      </div>
+
+        <div class="masonry" style="margin-top:0px;">
             <ul class="post-list">
+              {% assign postCounter = 0 %}
                 {% for post in site.posts %}
                 {% if post.tags contains 'comics' %}
+                {% if postCounter > 0 %}
                 <li>
                     <div class="item">
                         <a class="post-link" href="{{base}}{{ post.url }}">
@@ -26,6 +44,8 @@
                         </a>
                     </div>
                 </li>
+                {%  endif %}
+                {% assign postCounter = postCounter | plus: 1 %}
                 {%  endif %}
                 {% endfor %}
             </ul>
